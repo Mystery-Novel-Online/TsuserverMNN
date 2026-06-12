@@ -1029,6 +1029,7 @@ class ClientManager:
                 if force:
                     for client in self.area.clients:
                         if client.char_id == char_id:
+                            self.char_id = char_id
                             client.char_select()
                             if client == self:
                                 continue
