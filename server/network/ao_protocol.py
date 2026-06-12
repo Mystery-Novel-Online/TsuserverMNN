@@ -354,4 +354,6 @@ class AOProtocol(asyncio.Protocol):
                        needs_auth=False),  # YAML_AREA
         'YAML_MUSIC': _command(function=ao_commands.net_cmd_yaml_music,
                        needs_auth=False),  # YAML_MUSIC
+        'YAML_CHAR': _command(function=ao_commands.net_cmd_yaml_char,
+                       needs_auth=False),  # YAML_CHAR
     }

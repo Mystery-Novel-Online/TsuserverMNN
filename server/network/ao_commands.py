@@ -1330,6 +1330,36 @@ def net_cmd_yaml_music(client: ClientManager.Client, pargs: Dict[str, Any]):
         client.send_ooc(e)
 
 
+def net_cmd_yaml_char(client: ClientManager.Client, pargs: Dict[str, Any]):
+    if not client.is_staff():
+        client.send_ooc('You do not have permission to set the character list.')
+        return
+
+    yaml_hash = pargs['yaml_data']
+
+    save_dir = os.path.join('config', 'char_lists')
+    os.makedirs(save_dir, exist_ok=True)
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    yaml_file_name = f"{client.hub.get_name()}_{timestamp}"
+    yaml_file_path = os.path.join(save_dir, f"{yaml_file_name}.yaml")
+
+    url = f"{client.server.config['workshop_ip'].rstrip('/')}/api/workshop/file/{yaml_hash}"
+
+    try:
+        response = requests.get(url)
+        if response.status_code != 200:
+            logger.log_server(f"Failed to download YAML: HTTP {response.status_code}, {url}", client)
+            return
+
+        with open(yaml_file_path, 'wb') as f:
+            f.write(response.content)
+
+        logger.log_server(f"Character YAML saved to {yaml_file_path}", client)
+        client.hub.character_manager.command_list_load(client, yaml_file_name)
+
+    except Exception as e:
+        client.send_ooc(e)
 
 
     
