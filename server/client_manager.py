@@ -1941,7 +1941,9 @@ class ClientManager:
             # Their characters will not be able to be reused, but at least that's one less clue
             # about their presence.
             if not self.is_staff():
-                unusable_ids -= {c.char_id for c in self.area.clients if not c.is_visible}
+                unusable_ids -= {c.char_id for c in self.area.clients
+                                 if not c.is_visible
+                                 if c.char_id < len(char_list)}
 
             for x in unusable_ids:
                 char_list[x] = -1
@@ -1955,7 +1957,9 @@ class ClientManager:
         def refresh_visible_char_list(self):
             char_list = [0] * len(self.hub.character_manager.get_characters())
             unusable_ids = {c.char_id for c in self.get_visible_clients(self.area)
-                            if c.has_participant_character()}
+                            if c.has_participant_character()
+                            if c.char_id < len(char_list)}
+
             if not self.is_staff():
                 unusable_ids |= {self.hub.character_manager.get_character_id_by_name(name)
                                  for name in self.area.restricted_chars}
