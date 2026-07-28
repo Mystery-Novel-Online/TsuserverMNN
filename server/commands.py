@@ -5116,7 +5116,7 @@ def ooc_cmd_multiclients(client: ClientManager.Client, arg: str):
     client.send_ooc(info)
 
 
-def ooc_cmd_music_list(client: ClientManager.Client, arg: str):
+def ooc_cmd_personal_music(client: ClientManager.Client, arg: str):
     """
     Sets your current personal music list. This list is persistent between area changes and works on
     a client basis.
