@@ -2569,7 +2569,7 @@ def ooc_cmd_disemvowel(client: ClientManager.Client, arg: str):
             "{} was disemvowelled.".format(c.displayname))
 
 
-def ooc_cmd_dj_list(client: ClientManager.Client, arg: str):
+def ooc_cmd_music_list(client: ClientManager.Client, arg: str):
     """ (STAFF ONLY)
     Sets the current DJ list of your current hub (what music list a player will see when joining an
     area of your hub if they do not have a personal music list active).
