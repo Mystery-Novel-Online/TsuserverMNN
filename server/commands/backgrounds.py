@@ -137,3 +137,16 @@ def ooc_cmd_bg_variant(client: ClientManager.Client, arg: str):
     client.area.change_background_variant(arg, validate=not (client.is_staff() or client.area.cbg_allowed))
     client.area.broadcast_ooc('{} changed the backgrounds variant to {}.'.format(client.displayname, arg))
     logger.log_server('[{}][{}]Changed background variant to {}' .format(client.area.id, client.get_char_name(), arg), client)
+    
+def ooc_cmd_zone_bg_variant(client: ClientManager.Client, arg: str):
+    Constants.assert_command(client, arg, is_staff=True, parameters='>0')
+
+    if not client.zone_watched:
+        raise ZoneError('You are not watching a zone.')
+
+    zone = client.zone_watched
+
+    for area in zone.get_areas():
+        area.change_background_variant(arg, validate=not (client.is_staff() or client.area.cbg_allowed))
+    
+    client.send_ooc('You changed the background variants in this zone to {}.'.format(arg))

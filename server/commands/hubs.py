@@ -1,8 +1,17 @@
+import collections
+import datetime
+import random
+import hashlib
+import string
+import time
+
 from server import logger
 from server.constants import Constants, FadeOption, TargetType
 from server.exceptions import ArgumentError, AreaError, ClientError, HubError, MusicError, ServerError, TaskError
 from server.exceptions import PartyError, ZoneError, TrialError, NonStopDebateError
 from server.client_manager import ClientManager
+
+from typing import Union
 
 def ooc_cmd_hub(client: ClientManager.Client, arg: str):
     """
