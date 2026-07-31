@@ -587,6 +587,13 @@ class ClientManager:
                     pargs['pos'] = last_args['pos']
                     pargs['anim_type'] = last_args['anim_type']
                     pargs['flip'] = last_args['flip']
+                    
+                    pargs['offset_h'] = last_args['offset_h']
+                    pargs['offset_s'] = last_args['offset_s']
+                    pargs['offset_v'] = last_args['offset_v']
+                    pargs['keyframe_sequence'] = last_args['keyframe_sequence']
+                    pargs['sprite_layers'] = last_args['sprite_layers']
+        
                     # Only DRO 1.1.0+ has this
                     if self.packet_handler.HAS_HIDE_CHARACTER_AS_MS_ARGUMENT:
                         pargs['hide_character'] = last_args['hide_character']
