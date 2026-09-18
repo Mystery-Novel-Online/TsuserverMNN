@@ -2478,7 +2478,7 @@ def ooc_cmd_music_list(client: ClientManager.Client, arg: str):
             target.send_music_list_view()
         else:
             target.send_ooc('As you had a personal music list loaded, you will not be shown the '
-                            'hub music list. Display the hub music list by running /music_list.')
+                            'hub music list. Display the hub music list by running /personal_music.')
 
 
 def ooc_cmd_dj_list_info(client: ClientManager.Client, arg: str):
@@ -4667,15 +4667,15 @@ def ooc_cmd_personal_music(client: ClientManager.Client, arg: str):
     loading.
 
     SYNTAX
-    /music_list <music_list>
+    /personal_music <personal_music>
 
     PARAMETERS
-    <music_list>: Name of the intended music list
+    <personal_music>: Name of the intended music list
 
     EXAMPLES
-    >>> /music_list dr2
+    >>> /personal_music dr2
     Load the "dr2" music list.
-    >>> /music_list
+    >>> /personal_music
     Reset the music list to its default value.
     """
 
