@@ -128,7 +128,7 @@ Playback type is an optional variable which determines how the song will transit
     - Obtains the last 20 rolls from a target, or your last 20 rolls if not given a target.
 * **dicelog_area** "area"
     - Obtains the last 20 rolls from an area by ID or name, or the last 20 rolls of your area if not given one.
-* **dj_list** "music list"
+* **music_list** "music list"
     - Sets the music list of your hub.
     - If not given a music list, it will use the default file `config/music.yaml`.
 * **dj_list_info**

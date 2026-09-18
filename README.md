@@ -194,7 +194,7 @@ Additional notes are listed at the end of the command list. Unless otherwise spe
     - Lists all areas reachable from the current one.
 * **motd**
     - Returns the server's Message of the Day.
-* **music_list** "music list name"
+* **personal_music** "music list name"
     - Sets your music list to the given one, or restores the original one if not given any.
 * **music_list_info**
     - Returns your current music list.
