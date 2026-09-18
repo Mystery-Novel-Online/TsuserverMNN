@@ -2,9 +2,28 @@
 
 A cmprehensive list of available commands for GMs.
 GMs can bypass area passages and locks, receive special RP notifications and use GM specific commands.
-
 ---
 
+## Hub Management 
+
+| Command | Parameters | Description |
+|----------|------------|-------------|
+| `/hub_info` | - | Returns information about your hub. |
+| `/hub_password` | `<password>` | Changes the password of your hub. |
+| `/hub_password_info` | - | Gets the password of your hub. |
+| `/hub_rename` | `<name>` | Changes the name of your hub to the given name, or clears it if not given any. |
+| `/hub_end` | - | Deletes your hub. |
+| `/area_list` | `[yaml name]` | Sets the area list of your hub. If not given an area list, the client will ask you to upload one. |
+| `/area_list_info` | - | Returns the area list of your hub. |
+| `/music_list` | `[yaml name]` | Sets the music list of your hub. If not given a music list, the client will ask you to upload one. |
+| `/dj_list_info` | - | Returns the music list of your hub. |
+| `/char_list` | `[yaml name]` | Sets the character list of your hub. If not given a character list, the client will ask you to upload one. |
+| `/char_list_info` | - | Returns the character list of your hub. |
+| `/bg_list` | `[yaml name]` | Sets the background list of your hub. If not given a background list, it will use the default file `config/backgrounds.yaml`. |
+| `/bg_list_info` | - | Returns the background list of your hub. |
+
+
+---
 
 ## Area Locks
 
@@ -54,11 +73,6 @@ Playback type is an optional variable which determines how the song will transit
     - Changes the ambient sound effect of your current area.
 * **ambient_end**
     - Clears the ambient sound effect of your current area.
-* **area_list** "area list"
-    - Sets the area list of your hub.
-    - If not given an area list, it will use the default file `config/areas.yaml`.
-* **area_list_info**
-    - Returns the area list of your hub.
 * **autopass** "ID"
     - Toggles enter/leave messages being sent automatically or not to users in the current area, including original/target areas, whenever the target moves.
     - Messages will not be sent if sneaking. Altered messages will be sent if the area's lights are turned off.
@@ -66,17 +80,10 @@ Playback type is an optional variable which determines how the song will transit
 * **blind** "ID"
     - Changes the blind status of a target.
     - Blind players will receive no character sprites nor background with IC messages and cannot use "visual" commands such as /look, /getarea, etc.
-* **bg_list** "list"
-    - Sets the background list of your hub.
-    - If not given a background list, it will use the default file `config/backgrounds.yaml`.
-* **bg_list_info**
-    - Returns the background list of your hub.
 * **bg_period** "period name" "bg name"
     - Sets the special background to be displayed in the area whenever there is a clock in the area with the given period.
-
 * **bg_period_end** "period name"
     - Removes the special background to be displayed in the area whenever there is a clock in the area with the given period, so that it instead displays the normal background of the area.
-
 * **can_passagelock**
     - Changes the current area's setting to allow non-staff members to change passages starting in the area with /bilock or /unilock. By default area setting is indicated in your hub's area list.
 * **can_rollp**
@@ -85,11 +92,6 @@ Playback type is an optional variable which determines how the song will transit
     - Changes the current area's setting to allow RP users to use /getarea. By default area setting is indicated in your hub's area list.
 * **can_rpgetareas**
     - Changes the current area's setting to allow RP users to use /getareas. By default area setting is indicated in your hub's area list.
-* **char_list** "list"
-    - Sets the character list of your hub.
-    - If not given a character list, it will use the default file `config/characters.yaml`.
-* **char_list_info**
-    - Returns the character list of your hub.
 * **char_restrict** "character name"
     - Changes the restricted status of a character in the current area.
     - If a character is restricted, only GMs and above can use the character in the current area.
@@ -128,11 +130,6 @@ Playback type is an optional variable which determines how the song will transit
     - Obtains the last 20 rolls from a target, or your last 20 rolls if not given a target.
 * **dicelog_area** "area"
     - Obtains the last 20 rolls from an area by ID or name, or the last 20 rolls of your area if not given one.
-* **music_list** "music list"
-    - Sets the music list of your hub.
-    - If not given a music list, it will use the default file `config/music.yaml`.
-* **dj_list_info**
-    - Returns the music list of your hub.
 * **follow** "ID"
     - Starts following a target. If the target changes areas, you will automatically follow them there.
 * **gag** "ID"
@@ -155,16 +152,6 @@ Playback type is an optional variable which determines how the song will transit
     - If name is given, the handicap announcement will use it as the name of the handicap.
     - If announce if over is set to any of "False, false, 0, No, no", no announcements will be sent to the player indicating that they may now move areas.
     - If the player had an existing handicap, it will be overwritten with this one.
-* **hub_end**
-    - Deletes your hub.
-* **hub_info**
-    - Returns information about your hub.
-* **hub_password** "password"
-    - Changes the password of your hub.
-* **hub_password_info**
-    - Gets the password of your hub.
-* **hub_rename** "name"
-    - Changes the name of your hub to the given name, or clears it if not given any.
 * **iclock**
     - Changes the IC lock status of the current area.
     - If the area has an IC lock, only GMs and above will be able to send IC messages.
